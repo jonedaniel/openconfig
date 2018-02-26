@@ -1,0 +1,1 @@
+1. 使用 org.springframework.util.Assert 代替 if false throw new Exception
