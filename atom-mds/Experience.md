@@ -10,5 +10,8 @@
 3. 修改1.1链接中的相关链接：http://apis.map.qq.com/tools/poimarker?type=0&marker=coord:33.89554,114.26387;title:花木种植园;addr:河南省鄢陵县南坞镇&key=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77&referer=myapp
 4. 将此链接放入iframe即可获取目的地周边的动态地图
 ---
+<<<<<<< HEAD
 1. [理解Cookie和Session机制](https://www.cnblogs.com/andy-zhou/p/5360107.html)
 2.  
+=======
+>>>>>>> 586302d6f9edb37636c5030e0a9a1f467a9a4763
