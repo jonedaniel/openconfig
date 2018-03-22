@@ -11,4 +11,6 @@
 4. 将此链接放入iframe即可获取目的地周边的动态地图
 ---
 1. [理解Cookie和Session机制](https://www.cnblogs.com/andy-zhou/p/5360107.html)
-2. 
+2. dubbo分布式事务: 
+> provider service 使用try catch 将异常封装到 resultMap返回给了 consumer。 因此Transactional 不起作用，调用的多个本地service将不会回滚。<br>
+> 在catch block 中 使用 TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
