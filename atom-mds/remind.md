@@ -1,5 +1,0 @@
-- [x] linux 系统 mysql 安装.
-- [x] atom md 插件.
-- [ ] 背一下linux rpm jar命令.以及vi的使用方法
-- [ ] 为atom建立一个专门的md dir
-- [ ] 修改quero关注主题,全部改成编程相关
