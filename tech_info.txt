@@ -1,2 +1,14 @@
 http://os.51cto.com/art/201902/591883.htm  1月份GitHub上最热门的Java开源项目
 https://my.oschina.net/u/2551035/blog/802634  Google guava工具类的介绍和使用 
+
+//** after interview put in porder
+1. 多线程
+https://www.cnblogs.com/dolphin0520/p/3920397.html Java并发编程：CountDownLatch、CyclicBarrier和Semaphore
+https://blog.csdn.net/pange1991/article/details/53860651 Java线程的6种状态及切换(透彻讲解)
+https://blog.csdn.net/varyall/article/details/80201590?tdsourcetag=s_pcqq_aiomsg  JCU并发包原理总结
+
+2. 设计模式
+
+3. mysql索引
+
+4. hashMap
