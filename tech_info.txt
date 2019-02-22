@@ -7,7 +7,8 @@ https://www.cnblogs.com/lingerhk/p/3755583.html  kali下搭建WiFi钓鱼热点
 https://www.cnblogs.com/dolphin0520/p/3920397.html Java并发编程：CountDownLatch、CyclicBarrier和Semaphore
 https://www.cnblogs.com/jijijiefang/articles/7222955.html 线程的几种状态转换
 https://blog.csdn.net/varyall/article/details/80201590?tdsourcetag=s_pcqq_aiomsg  JCU并发包原理总结
-
+ThreadLocal
+https://www.jianshu.com/p/a8694d97caaa 缓存
 2. 设计模式
 
 3. mysql索引
