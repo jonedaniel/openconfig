@@ -11,8 +11,23 @@ https://blog.csdn.net/varyall/article/details/80201590?tdsourcetag=s_pcqq_aiomsg
 ThreadLocal
 https://www.jianshu.com/p/a8694d97caaa 缓存
 
-2. 设计模式
+2. design-pattern: 
+	1. 观察者模式
 
-3. mysql索引
+3. db: 
+	1. mysql联合索引(又叫复合索引)
+	2. https://segmentfault.com/a/1190000002906345 redis持久化方式 rdb(redis db file)与aof(Append only file)
 
-4. hashMap
+4. jdk: HashMap 与 ConcurrentHashMap
+
+5. 运维:
+`	1. nginx配置常用的参数
+	2. nginx深入
+	3. docker
+	4. jenkins
+	5. 常用linux命令
+
+
+
+
+
