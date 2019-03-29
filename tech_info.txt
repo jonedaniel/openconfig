@@ -3,7 +3,8 @@ https://my.oschina.net/u/2551035/blog/802634  Google guava工具类的介绍和使用
 https://www.cnblogs.com/lingerhk/p/3755583.html  kali下搭建WiFi钓鱼热点
 https://my.oschina.net/90liusq/blog/1557704 spring boot validation参数校验
 
-//** after interview put in porder
+
+
 1. 多线程
 https://www.cnblogs.com/dolphin0520/p/3920397.html Java并发编程：CountDownLatch、CyclicBarrier和Semaphore
 https://www.cnblogs.com/jijijiefang/articles/7222955.html 线程的几种状态转换
@@ -15,9 +16,8 @@ https://www.jianshu.com/p/a8694d97caaa 缓存
 	1. 观察者模式
 
 3. db: 
-	1. mysql联合索引(又叫复合索引)
+	1. mysql联合索引(又叫复合索引) https://www.cnblogs.com/softidea/p/5977860.html
 	2. https://www.cnblogs.com/itdragon/p/7906481.html redis持久化方式 rdb(redis db file)与aof(Append only file)
-
 4. jdk: HashMap 与 ConcurrentHashMap
 
 5. 运维:
@@ -26,8 +26,10 @@ https://www.jianshu.com/p/a8694d97caaa 缓存
 	3. docker
 	4. jenkins
 	5. 常用linux命令
-6. stomp websocket https://segmentfault.com/a/1190000006617344
-
+6. message
+	stomp websocket https://segmentfault.com/a/1190000006617344
+	rabbit mq 基础概念 https://www.cnblogs.com/diegodu/p/4971586.html
+		应用场景 https://blog.csdn.net/whoamiyang/article/details/54954780
 
 
 
