@@ -13,7 +13,20 @@ ThreadLocal
 https://www.jianshu.com/p/a8694d97caaa 缓存
 
 2. design-pattern: 
-	1. 观察者模式
+	1. 建造者模式
+		1. 工厂模式
+		2. 单例模式
+		3. 原型模式
+	2. 行为模式
+		1.观察者模式
+		2.模板方法模式
+	3. 结构模式
+		1.装饰器模式
+		2.代理模式 
+			1. 静态代理
+			2. 动态代理
+				1.jdk 基于接口的继承
+				2.cglib 基于类的继承
 
 3. db: 
 	1. mysql联合索引(又叫复合索引) https://www.cnblogs.com/softidea/p/5977860.html

@@ -30,3 +30,4 @@ nbdist/
 overlays/
 .gradle/
 build/
+*.bak
