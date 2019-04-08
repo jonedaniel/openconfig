@@ -43,6 +43,7 @@ https://www.jianshu.com/p/a8694d97caaa 缓存
 	stomp websocket https://segmentfault.com/a/1190000006617344
 	rabbit mq 基础概念 https://www.cnblogs.com/diegodu/p/4971586.html
 		应用场景 https://blog.csdn.net/whoamiyang/article/details/54954780
-
+7. Schedule
+	spring schedule执行原理 https://github.com/TFdream/blog/issues/27
 
 
