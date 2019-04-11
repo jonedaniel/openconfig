@@ -31,6 +31,7 @@ https://www.jianshu.com/p/a8694d97caaa 缓存
 3. db: 
 	1. mysql联合索引(又叫复合索引) https://www.cnblogs.com/softidea/p/5977860.html
 	2. https://www.cnblogs.com/itdragon/p/7906481.html redis持久化方式 rdb(redis db file)与aof(Append only file)
+	3. mysql优化技巧 https://mp.weixin.qq.com/s/2-74deTKs2VCSbH8-wIelQ
 4. jdk: HashMap 与 ConcurrentHashMap
 
 5. 运维:
