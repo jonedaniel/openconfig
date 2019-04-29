@@ -1,2 +1,0 @@
-1. 一个文档中如果有嵌套文档,使用jpa查不出来,正在解决.
-2. 一对一要在 parent,child中互相引用对方.  一对多非常麻烦. 多对多更麻烦http://cxytiandi.com/blog/detail/2574
