@@ -1,0 +1,6 @@
+## 修改端口:
+jenkins 的配置文件， 是在 /etc/sysconfig/jenkins , 里面有很多的变量， 因为原来的 8080 端口被占用
+修改 JENKINS_PORT="8888" 即可， 
+## 加上下文路径
+加一个 prefix 前缀供 nginx 转发用， 我是修改了下 /etc/init.d/jenkins 的服务脚本 将 PARAMS 哪一行改成 PARAMS="--logfile=/var/log/jenkins/jenkins.log --webroot=/var/cache/jenkins/war --daemon --prefix=/jenkins"
+这样代理的路径就变成 /jenkins 了

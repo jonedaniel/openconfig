@@ -47,4 +47,6 @@ https://www.jianshu.com/p/a8694d97caaa 缓存
 7. Schedule
 	spring schedule执行原理 https://github.com/TFdream/blog/issues/27
 
+8. 工作流框架: camunda activity5 
+
 
