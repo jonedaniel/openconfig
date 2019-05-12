@@ -49,4 +49,6 @@ https://www.jianshu.com/p/a8694d97caaa 缓存
 
 8. 工作流框架: camunda activity5 
 
+9. JRebel激活：	https://blog.csdn.net/feng_pump/article/details/80911753#
+
 
