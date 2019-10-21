@@ -1,2 +1,4 @@
 1. 启动jar包设置profile： java -jar xxx.jar --spring.profiles.active=prod
 2. 启动jar包设置远程debug java -Xdebug -Xrunjdwp:server=y,transport=dt_socket,address=8000,suspend=n -jar demo.jar
+
+3. xshell 破解版： https://www.newasp.net/soft/384562.html
