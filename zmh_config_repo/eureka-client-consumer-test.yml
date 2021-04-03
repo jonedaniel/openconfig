@@ -4,4 +4,4 @@ eureka:
       defaultZone: http://localhost:9000/eureka/
     proxy-password: cloud-password
 
-var: eureka-client-2-test 
+var: eureka-client-2-test-bus-refresh
