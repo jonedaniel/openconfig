@@ -1,1 +1,8 @@
 var: eureka-server-test 
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:9000/eureka/
+    proxy-password: cloud-password
