@@ -1,0 +1,48 @@
+springmvc-  request->dispatcherSerlvlet->handlerMapping->handler->ModelAndView->viewResoler->viewRender->response
+
+spring ioc->  我们不用手动创建对象,然后去组装对象的依赖关系.在写代码的时候,只需要在类里面关心业务逻辑,然后声明依赖的对象. ioc容器会帮我们去创建对象, 然后处理依赖关系.
+	di-> 就是ioc思想下的,  依赖的注入方式, spring 提供了基于 构造器 与 属性的注入方式.
+bean的声明周期:   实例化-> 属性设值-> init-method -> 对于单例bean: 放入缓存->容器销毁,调用disposalBean.destroy销毁
+					-> 对于原型bean: 创建之后,交由用户去管理.
+spring的启动过程: abstractApplicationContext.refresh方法: 	configurableListableBeanFactory
+						-> optainFreshBeanFactory:  销毁bean,清除beanFactory对象, 创建beanFactory, 加载BeanDefinition.
+						-> prepareBeanFactory: 加载一些特定的bean. enviroment,SystemProperty.
+						-> invokeBeanFactoryPostProceccor. 创建beanFactory后的 处理器回调
+						-> registerBeanPostProceccor: 注册Bean后处理器,只是注册并不回调
+						-> finishBeanFactoryInitialization: 
+								-> 调用beanFactory.getBean方法. 
+									-> doGetBean, 遍历注册中心中BeanDefinition,获取bean的全路径类名,注册依赖关系. 这里不允许循环依赖,否则会报错.
+									-> 递归调用getBean方法,先初始化依赖的所有bean,
+									-> createBean 确保beanDefinition里的class被加载,尝试获取代理对象,如果能够获取, 返回aop代理对象. 
+									-> doCreateBean  
+										-> createBeanInstance 创建bean实例  
+										-> populateBean  属性设值,处理依赖
+										-> initilizeBean  调用 init-method, 这时候会在前后 回调beanPostProcessor的   postProcessBefore/afterInitialization
+aop: 面向切面编程:    类名使用@Aspect注解, 设置切面pointCut, 然后使用 @before @After @aroung @beforeReturn @beforeThrowing 去声明在注解的这种场景下如何进行处理.  可以从 joinPoint 获取到当前的类,方法,还有参数,进行业务处理.
+	-> cg-lib 基于类的反射 或者  jdk 基于接口的反射
+spring如何解决循环依赖:   使用三级缓存. 一级缓存singletonObjects存储初始化完成的bean对象, 二级缓存 earlySingletonObjects 存储原始bean对象,未属性设置.   三级缓存 singletonBeanFactory 存放bean工厂对象,用于解决循环依赖.
+			原型bean不能解决循环依赖，  构造器注入的bean不能解决循环依赖   属性set注入的bean可以解决循环依赖			
+			实例的创建过程:     	1.dogetbean方法首先查询1，2，3级缓存，如果3级缓存存在bean对象，则升级为二级缓存。
+					2. bean在实例化后 会添加到一级缓存， 移除二三级缓存
+					3. bean在调用构造器实例化之前，没有任何实例存入缓存。 因此构造器注入的bean不能解决循环依赖
+					4. 多实例bean一样没有任何bean注入缓存， 因此也不能解决循环依赖
+					5. a执行 doGetBean ->查询缓存 -> createBean创建实例 -> 实例化完成放入3级缓存中 -> poputelateBean属性设值时发现有一个属性是B
+						b执行dogetbean方法->查询缓存 ->创建实例 -> 放入3级缓存 -> populateBean属性设置时发现有一个属性是a ，此时会直接从缓存中取出a， 完成属性设置，删除3级缓存，存入一级缓存。
+springboot： 基于约定优于配置的思想，提供了默认配置，集成tomcat，jetty，灵活打包， 大大减少了开发，运维的复杂度
+	核心注解： @SpringbootApplication
+			-> springbootconfigration: 声明启动类也是一个配置类。  componentScan 扫面当前包路径下的 component bean 注入ioc容器  @enableautoconfiguration 将项目的所有符合条件的配置类 加载到ioc容器。（通过import（autoconfigurationimportSelector））
+	自动配置> 通过meta-info.spring.factory文件 指定配置类，通过配置类注入相关的bean。
+	import： 直接引入bean 或者 通过 importSelectors接口的实现类  按条件注入bean
+	propertySource接口，读取一个配置文件，并将一个配置文件的值 设置到类上。
+	importResource ， 引入配置文件。 比如我们想将一个springmvc项目集成， 就可以使用该注解来引入xml文件
+	此外springboot 还提供了各种 conditional+条件注解 来让我们定制bean的注入条件。比如conditionalOnMissingBean  conditioanlOnProperty
+
+springcloud: spring提供的一整套分布式解决方案.
+	1. 注册中心: eureka server:  引入依赖@EnableEurekaServer 配置类  register-with-eureka:false,fetch-registry: false, server-url.defaultZone:url.
+	2. 微服务: eureka client: 引入依赖 server-url.defaltZone:url 
+	3. rpc: openfeign: eurekaclient 之间的http调用,内部还是使用ribbon,  @FeignClient(value=applicationName),@GetMaping 就可以调用其他服务的接口.
+	4: 配置中心: config server: 配置远程仓库地址, 帐号密码. 使用配置中心的服务需要 配置  config sever的url,label指定分支, profile指定环境.  config server会根据  应用名+profile去匹配 配置文件. 需要注意配置文件需要  在bootstrap.yml里配置,否则不会生效
+	5: 消息总线: bus: 在使用config server的时候, 更新远程仓库, 配置中心并不会主动拉取配置文件, 手动操作比较麻烦, 这时候就可以引入消息总线.  rabbit相关配置. actuator.  bus.enabled:true bus.trace:enabled:true management.endpoints.web.exposure.include: bus-refresh
+	6: 网关 gateway:  路由,过滤.可以在yml 或者 使用java代码来配置网关
+
+
